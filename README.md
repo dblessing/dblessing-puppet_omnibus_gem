@@ -1,10 +1,13 @@
-# puppetlabs pe_gem module
+# Puppet Omnibus Gem Module
 
-This module provides management of Ruby gems for Puppet Enterprise.
+Based on original work by Puppet Labs, Inc. at 
+https://github.com/puppetlabs/puppetlabs-pe_gem
 
-    package { 'json':
+This module provides management of Ruby gems for Puppet Omnibus. Using the `puppet_omnibus_gem` provider will allow gems to be installed within the monolithic Puppet Omnibus environment so the gem can be used in new types/providers.
+
+    package { 'my_gem':
       ensure   => present,
-      provider => pe_gem,
+      provider => puppet_omnibus_gem,
     }
 
-This uses puppet gem as a parent and simply alters the gem path to /opt/puppet/bin/gem.
+This uses puppet gem as a parent and simply alters the gem binary path to `/opt/puppet-omnibus/embedded/bin/gem`.
