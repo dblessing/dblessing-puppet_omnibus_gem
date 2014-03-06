@@ -1,4 +1,4 @@
-package { 'json':
+package { 'my_gem':
   ensure   => present,
-  provider => pe_gem,
+  provider => puppet_omnibus_gem,
 }
